@@ -79,14 +79,33 @@
     }
 
     .caption {
-      position: absolute;
-      bottom: 30px;
-      width: 100%;
-      text-align: center;
-      font-size: 28px;
-      font-weight: 500;
-      text-shadow: 0 0 8px black;
-    }
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  text-shadow: 0 0 8px black;
+  animation: rise 6s ease-in-out infinite;
+}
+
+@keyframes rise {
+  0% {
+    bottom: -80px;
+    opacity: 0;
+  }
+  40% {
+    bottom: 50%;
+    opacity: 1;
+  }
+  60% {
+    bottom: 50%;
+    opacity: 1;
+  }
+  100% {
+    bottom: -80px;
+    opacity: 0;
+  }
+}
   </style>
 </head>
 
@@ -102,3 +121,4 @@
   </div>
 </body>
 </html>
+
