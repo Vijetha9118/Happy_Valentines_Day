@@ -19,8 +19,8 @@
 
     .earth {
       position: absolute;
-      width: 260px;
-      height: 260px;
+      width: 300px;
+      height: 300px;
       bottom: 20px;
       left: 20px;
       background-image: url('https://raw.githubusercontent.com/Vijetha9118/moon_love/main/images/earth1.jpg');
@@ -30,8 +30,8 @@
 
     .moon {
       position: absolute;
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       top: 40px;
       right: 40px;
       background-image: url('https://raw.githubusercontent.com/Vijetha9118/moon_love/main/images/moon1.jpg');
@@ -41,71 +41,101 @@
 
     .jet {
       position: absolute;
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       background-image: url('https://raw.githubusercontent.com/Vijetha9118/moon_love/main/images/jet1.jpg');
       background-size: contain;
       background-repeat: no-repeat;
-      animation: fly 6s linear infinite;
+      animation: fly 10s linear infinite;
       transform-origin: center;
     }
 
     @keyframes fly {
       0% {
-        left: 80px;
+        left: 120px;
         top: calc(100vh - 200px);
         transform: rotate(0deg);
       }
       45% {
-        left: calc(100vw - 200px);
-        top: 80px;
+        left: calc(100vw - 220px);
+        top: 120px;
         transform: rotate(0deg);
       }
       50% {
-        left: calc(100vw - 200px);
-        top: 80px;
+        left: calc(100vw - 220px);
+        top: 120px;
         transform: rotate(180deg);
       }
       95% {
-        left: 80px;
+        left: 120px;
         top: calc(100vh - 200px);
         transform: rotate(180deg);
       }
       100% {
-        left: 80px;
+        left: 120px;
         top: calc(100vh - 200px);
         transform: rotate(0deg);
       }
     }
 
+    /* Caption rising to center and staying */
     .caption {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  font-size: 28px;
-  font-weight: 500;
-  text-shadow: 0 0 8px black;
-  animation: rise 6s ease-in-out infinite;
-}
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-size: 42px;
+      font-weight: 600;
+      text-shadow: 0 0 12px black;
+      opacity: 0;
+      animation: rise 6s ease-out forwards;
+      line-height: 1.3;
+    }
 
-@keyframes rise {
-  0% {
-    bottom: -80px;
-    opacity: 0;
-  }
-  40% {
-    bottom: 50%;
-    opacity: 1;
-  }
-  60% {
-    bottom: 50%;
-    opacity: 1;
-  }
-  100% {
-    bottom: -80px;
-    opacity: 0;
-  }
-}
+    @keyframes rise {
+      0% {
+        bottom: -120px;
+        opacity: 0;
+      }
+      60% {
+        bottom: 50%;
+        opacity: 1;
+      }
+      100% {
+        bottom: 50%;
+        opacity: 1;
+      }
+    }
+
+    /* Floating hearts (red + pink) */
+    .heart {
+      position: absolute;
+      font-size: 22px;
+      opacity: 0.9;
+      animation: floatUp 6s linear infinite;
+    }
+
+    /* Floating stars (golden) */
+    .star {
+      position: absolute;
+      font-size: 18px;
+      opacity: 0.9;
+      animation: floatUp 8s linear infinite;
+      color: #ffd700; /* GOLD */
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 0.2;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 
@@ -116,9 +146,38 @@
     <div class="jet"></div>
 
     <div class="caption">
-      I love you to the moon and back, again and again.
+      I Love You To The Moon And Back,<br>
+      Again and Again
     </div>
   </div>
+
+  <script>
+    /* Heart colors: red + pink variations */
+    const heartColors = ["#ff4d6d", "#ff6b81", "#ff8fa3"];
+
+    /* Generate floating hearts */
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.bottom = "-20px";
+      heart.style.color = heartColors[Math.floor(Math.random() * heartColors.length)];
+      heart.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(heart);
+    }
+
+    /* Generate floating golden stars */
+    for (let i = 0; i < 30; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.innerHTML = "✦";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.bottom = "-20px";
+      star.style.animationDelay = Math.random() * 6 + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+
 </body>
 </html>
-
