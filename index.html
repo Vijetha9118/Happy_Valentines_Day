@@ -23,16 +23,18 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
+      background-size: cover;
+      background-position: center;
     }
 
     .earth {
-      background: url('https://i.imgur.com/3ZQ3Z5O.png') no-repeat center/cover;
+      background-image: url('https://raw.githubusercontent.com/itsron717/space-assets/main/earth.png');
       bottom: 40px;
       left: calc(50% - 60px);
     }
 
     .moon {
-      background: url('https://i.imgur.com/8kQeX8x.png') no-repeat center/cover;
+      background-image: url('https://raw.githubusercontent.com/itsron717/space-assets/main/moon.png');
       top: 40px;
       right: 40px;
     }
@@ -41,16 +43,21 @@
       position: absolute;
       width: 80px;
       height: 80px;
-      background: url('https://i.imgur.com/8mQpZ8p.png') no-repeat center/contain;
+      background-image: url('https://raw.githubusercontent.com/itsron717/space-assets/main/jet.png');
+      background-size: contain;
+      background-repeat: no-repeat;
       animation: fly 6s linear infinite;
+      left: 50%;
+      top: 80%;
+      transform: translate(-50%, -50%);
     }
 
     @keyframes fly {
-      0%   { transform: translate(0, 0); left: 50%; top: 80%; }
-      25%  { transform: translate(-200px, -300px); }
-      50%  { transform: translate(200px, -500px); }
-      75%  { transform: translate(-200px, -300px); }
-      100% { transform: translate(0, 0); left: 50%; top: 80%; }
+      0%   { transform: translate(-50%, -50%) rotate(0deg); }
+      25%  { transform: translate(-200px, -300px) rotate(20deg); }
+      50%  { transform: translate(200px, -500px) rotate(-20deg); }
+      75%  { transform: translate(-200px, -300px) rotate(10deg); }
+      100% { transform: translate(-50%, -50%) rotate(0deg); }
     }
 
     .caption {
