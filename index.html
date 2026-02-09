@@ -28,10 +28,11 @@
       background-repeat: no-repeat;
     }
 
+    /* Moon stays top-right, only size changed */
     .moon {
       position: absolute;
-      width: 180px;
-      height: 180px;
+      width: 130px;
+      height: 130px;
       top: 40px;
       right: 40px;
       background-image: url('https://raw.githubusercontent.com/Vijetha9118/moon_love/main/images/moon1.jpg');
@@ -78,7 +79,7 @@
       }
     }
 
-    /* Caption rising to center and staying */
+    /* Main caption rising to center */
     .caption {
       position: absolute;
       width: 100%;
@@ -106,6 +107,28 @@
       }
     }
 
+    /* NEW top-left text */
+    .topLeftText {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 32px;
+      font-weight: 600;
+      text-shadow: 0 0 10px black;
+    }
+
+    /* Bottom-right text */
+    .signature {
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      text-align: right;
+      font-size: 28px;
+      font-weight: 500;
+      text-shadow: 0 0 10px black;
+      line-height: 1.3;
+    }
+
     /* Floating hearts (red + pink) */
     .heart {
       position: absolute;
@@ -120,7 +143,7 @@
       font-size: 18px;
       opacity: 0.9;
       animation: floatUp 8s linear infinite;
-      color: #ffd700; /* GOLD */
+      color: #ffd700;
     }
 
     @keyframes floatUp {
@@ -145,40 +168,22 @@
     <div class="moon"></div>
     <div class="jet"></div>
 
+    <!-- NEW top-left text -->
+    <div class="topLeftText">
+      Oh My Adavi Manishiii,
+    </div>
+
     <div class="caption">
       I Love You To The Moon And Back,<br>
-      Again and Again...
+      Again and Again
+    </div>
+
+    <div class="signature">
+      Oh My Adavi Manishiii,<br>
+      --Koalaaa...
     </div>
   </div>
 
   <script>
     /* Heart colors: red + pink variations */
-    const heartColors = ["#ff4d6d", "#ff6b81", "#ff8fa3"];
-
-    /* Generate floating hearts */
-    for (let i = 0; i < 20; i++) {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "❤";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.bottom = "-20px";
-      heart.style.color = heartColors[Math.floor(Math.random() * heartColors.length)];
-      heart.style.animationDelay = Math.random() * 5 + "s";
-      document.body.appendChild(heart);
-    }
-
-    /* Generate floating golden stars */
-    for (let i = 0; i < 30; i++) {
-      const star = document.createElement("div");
-      star.className = "star";
-      star.innerHTML = "✦";
-      star.style.left = Math.random() * 100 + "vw";
-      star.style.bottom = "-20px";
-      star.style.animationDelay = Math.random() * 6 + "s";
-      document.body.appendChild(star);
-    }
-  </script>
-
-</body>
-</html>
-
+    const heartColors = ["#ff4d
