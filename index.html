@@ -17,67 +17,75 @@
       background: url('https://raw.githubusercontent.com/Vijetha9118/moon_love/main/images/space.jpg') center/cover no-repeat;
     }
 
-    .earth, .moon {
+    .earth {
       position: absolute;
+      width: 260px;
+      height: 260px;
+      bottom: 20px;
+      left: 20px;
+      background-image: url('https://raw.githubusercontent.com/Vijetha9118/moon_love/main/images/earth1.jpg');
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    .earth {
-      width: 160px;
-      height: 160px;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-image: url('https://raw.githubusercontent.com/Vijetha9118/moon_love/main/images/earth1.jpg');
     }
 
     .moon {
-      width: 120px;
-      height: 120px;
-      top: 60px;
-      left: 50%;
-      transform: translateX(-50%);
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      top: 40px;
+      right: 40px;
       background-image: url('https://raw.githubusercontent.com/Vijetha9118/moon_love/main/images/moon1.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
     }
 
     .jet {
       position: absolute;
-      width: 90px;
-      height: 90px;
+      width: 120px;
+      height: 120px;
       background-image: url('https://raw.githubusercontent.com/Vijetha9118/moon_love/main/images/jet1.jpg');
       background-size: contain;
       background-repeat: no-repeat;
-      animation: fly 6s ease-in-out infinite;
-      left: 50%;
-      transform: translateX(-50%);
+      animation: fly 6s linear infinite;
+      transform-origin: center;
     }
 
     @keyframes fly {
-      0%   { top: 78%; }
-      20%  { top: 55%; left: 40%; }
-      40%  { top: 20%; left: 50%; }
-      60%  { top: 55%; left: 60%; }
-      80%  { top: 78%; left: 50%; }
-      100% { top: 78%; left: 50%; }
+      0% {
+        left: 80px;
+        top: calc(100vh - 200px);
+        transform: rotate(0deg);
+      }
+      45% {
+        left: calc(100vw - 200px);
+        top: 80px;
+        transform: rotate(0deg);
+      }
+      50% {
+        left: calc(100vw - 200px);
+        top: 80px;
+        transform: rotate(180deg);
+      }
+      95% {
+        left: 80px;
+        top: calc(100vh - 200px);
+        transform: rotate(180deg);
+      }
+      100% {
+        left: 80px;
+        top: calc(100vh - 200px);
+        transform: rotate(0deg);
+      }
     }
 
     .caption {
       position: absolute;
-      bottom: -60px;
+      bottom: 30px;
       width: 100%;
       text-align: center;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 500;
       text-shadow: 0 0 8px black;
-      opacity: 0;
-      animation: rise 3s ease-in-out forwards 1.5s;
-    }
-
-    @keyframes rise {
-      0% { bottom: -60px; opacity: 0; }
-      100% { bottom: 40px; opacity: 1; }
     }
   </style>
 </head>
