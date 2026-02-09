@@ -179,11 +179,37 @@
     </div>
 
     <div class="signature">
-      Oh My Adavi Manishiii,<br>
       --Koalaaa...
     </div>
   </div>
 
   <script>
     /* Heart colors: red + pink variations */
-    const heartColors = ["#ff4d
+    const heartColors = ["#ff4d6d", "#ff6b81", "#ff8fa3"];
+
+    /* Generate floating hearts */
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.bottom = "-20px";
+      heart.style.color = heartColors[Math.floor(Math.random() * heartColors.length)];
+      heart.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(heart);
+    }
+
+    /* Generate floating golden stars */
+    for (let i = 0; i < 30; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.innerHTML = "✦";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.bottom = "-20px";
+      star.style.animationDelay = Math.random() * 6 + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+
+</body>
+</html>
